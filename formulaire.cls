@@ -18,6 +18,8 @@
 \RequirePackage           {amsmath}
 \RequirePackage           {amsfonts}
 \RequirePackage           {amssymb}
+\RequirePackage           {amsthm}
+\RequirePackage           {stmaryrd}
 \RequirePackage[european] {circuitikz}
 \RequirePackage           {fancybox}
 \RequirePackage           {graphicx}
@@ -41,4 +43,16 @@
                         }{\end{circuitikz}
                           \shorthandon{:!}
                         }
+
+% Nouvelle commandes
+% Équivalence
+\newcommand{\equival}{\Leftrightarrow}
+
+% Intervalle d'entiers
+\newcommand{\seg}[2]{\llbracket #1, #2 \rrbracket}
+
+% Théorèmes
+\newtheorem{theo}{Théorème}
+\newtheorem{lemme}{Lemme}
+\newtheorem{defi}{Définition}
 

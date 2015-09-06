@@ -1,0 +1,84 @@
+
+\begin{lemme}\[
+    \forall z \in \mathbb{C}, \forall n \in \mathbb{N}, \sum_{i=0}^{n} z^i = \left\{\begin{array}{l} \frac{1-z^{n+1}}{1-z} \text{ si } z \neq 1 \\
+                                                                                                    n+1 \text{ si } z = 1 \\
+                                                                                    \end{array}\right.
+\]\end{lemme}
+
+\begin{lemme}\[
+    \mathbb{U}_n = \left\{\exp\left(\frac{2ik\pi}{n}\right)\ |\ k\in\seg{0}{n-1}\right\}
+\]\end{lemme}
+
+\begin{lemme}\[
+    z^n = \rho e^{i\theta} \equival z \in \left\{ \sqrt[n]{\rho}\ e^{i\frac{\theta}{n}}\omega\ |\ \omega\in\mathbb{U}_n\right\}
+\]\end{lemme}
+
+\begin{lemme}\[
+    \begin{split}
+        1+\cos\theta  &= 2\cos^2\frac{\theta}{2} \\
+        1-\cos\theta  &= 2\sin^2\frac{\theta}{2} \\
+        1+e^{i\theta} &= 2\cos\frac{\theta}{2}\ e^{i\frac{\theta}{2}} \\
+        1-e^{i\theta} &= -2i\sin\frac{\theta}{2}\ e^{i\frac{\theta}{2}} \\
+    \end{split}
+\]\end{lemme}
+
+\begin{lemme}\[
+    \begin{split}
+        \ln(1+x) &\underset{0}{=} x - \frac{x^2}{2} + \frac{x^3}{3} + o(x^3) \\
+        \frac{1}{1-x} &\underset{0}{=} 1 + x + x^2 + o(x^2) \\
+        (i+x)^\alpha &\underset{0}{=} 1 + \alpha x + \frac{\alpha(\alpha - 1)}{2}x^2 + o(x^2) \\
+    \end{split}
+\]\end{lemme}
+
+\begin{lemme}\[
+    \forall x \in \mathbb{R}, -\frac{\pi}{2} < \arctan x < \frac{\pi}{2} \text{ et } \arctan'(x) = \frac{1}{1+x^2}
+\]\end{lemme}
+
+\begin{lemme}\[
+    \int u(x)v(x)dx = [U(x)v(x)] - \int U(x)v'(x)dx
+\]\end{lemme}
+
+\begin{theo} Pour $E$ un $\mathbb{K}-ev$ de dimension finie et $f$ une application linéaire de $E$ dans $F$, on a : \[
+    \dim E = \dim\ker f + \text{rang} f
+\]\end{theo}
+
+\begin{lemme}\[
+    \frac{1}{X(X-1)} = \frac{1}{X} - \frac{1}{X-1}
+\]\end{lemme}
+
+\begin{lemme}\[
+    P = \prod_{i=1}^n (X-a_i)^{k_i} \Rightarrow \frac{P'}{P} = \sum_{i=1}^{n} \frac{k_i}{X-a_i}
+\]\end{lemme}
+
+\begin{lemme}\[
+    A = \left(\begin{array}{cc}a & b \\ c & b\end{array}\right) \Rightarrow A^{-1} = \frac{1}{ad-bc}\left(\begin{array}{cc} d & -b\\ -c & a\end{array}\right)
+\]\end{lemme}
+
+\begin{lemme}\[
+    n! \sim \sqrt{2n\pi}\left(\frac{n}{e}\right)^n
+\]\end{lemme}
+
+\begin{lemme}\[
+    \sum_{n \geq 1} \frac{1}{k^\alpha\ln^\beta k} \text{ CV } \equival (\alpha, \beta) > (1, 1)
+\]\end{lemme}
+
+\begin{theo}[Cantor-Bernstein]
+    Deux ensembles qui s'injectent l'un dans l'autre sont en bijection.
+\end{theo}
+
+\begin{theo}
+    Toute fonction réelle continue injective sur un intervalle réel non vide et non singleton est strictement monotone.
+\end{theo}
+
+\begin{lemme}\[
+    \lim_{X \rightarrow +\infty} \int_0^X e^{-x^2}dx = \frac{\sqrt{\pi}}{2}
+\]\end{lemme}
+
+\begin{lemme}\[
+    \zeta(2) = \sum_{k=1}^{+\infty} \frac{1}{k^2} = \frac{\pi^2}{6}
+\]\end{lemme}
+
+\begin{theo}
+    Tout sous-groupe additif de $\mathbb{R}$ est soit dense soit discret de la forme $r\mathbb{Z}, r\in\mathbb{R}_+^*$.
+\end{theo}
+
