@@ -52,8 +52,15 @@
 \newcommand{\seg}[2]{\llbracket #1, #2 \rrbracket}
 
 % Théorèmes
-\newtheorem{theo}{Théorème}
-\newtheorem{lemme}{Lemme}
-\newtheorem{defi}{Définition}
-\newtheorem{prop}{Proposition}
+\newtheorem{theo}  {Théorème}
+\newtheorem{lemme} {Lemme}
+\newtheorem{defi}  {Définition}
+\newtheorem{prop}  {Proposition}
+\newtheorem{rem}   {Remarque}
+
+% Amélioration du phi
+\renewcommand{\phi}{\varphi}
+
+% Sinus cardinal
+\newcommand{\sinc}{\text{sinc}}
 

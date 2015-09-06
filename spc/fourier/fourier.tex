@@ -1,0 +1,69 @@
+
+\begin{theo}[Décomposition en série de Fourier]\[
+    f(t) = a_0 + \sum_{n=1}^{+\infty} (a_n\cos(n\omega t) + b_n\sin(n\omega t))
+\]\end{theo}
+
+\begin{defi}[Harmonique de rang $n$]\[
+    S_n(t) = a_n\cos(n\omega t) + b_n\sin(n\omega t) = C_n\cos(n\omega t + \phi_n)
+\]\end{defi}
+
+\begin{defi}[Fondamental]
+    $S_1(t)$ est le fondamental du signal $f(t)$
+\end{defi}
+
+\begin{defi}[Valeur moyenne]\[
+    \left<f(t)\right> = a_0 = \frac{1}{T}\int_{t_0}^{t_0+T}f(t)dt
+\]\end{defi}
+
+\begin{lemme}[Calcul des coefficients]\[
+    \begin{split}
+        a_n &= \frac{2}{T}\int_{t_0}^{t_0+T} f(t)\cos(n\omega t)dt \\
+        b_n &= \frac{2}{T}\int_{t_0}^{t_0+T} f(t)\sin(n\omega t)dt \\
+    \end{split}
+\]\end{lemme}
+
+\begin{lemme}[Signal crénaux impair]\[
+    \begin{split}
+        b_{2p} &= 0 \\
+        b_{2p+1} &= \frac{4E}{\pi(2p+1)} \\
+    \end{split}
+\]\end{lemme}
+
+\begin{lemme}[Signal triangle pair]\[
+    \begin{split}
+        a_{2p} &= 0 \\
+        a_{2p+1} &= \frac{8E}{\pi^2(2p+1)^2} \\
+    \end{split}
+\]\end{lemme}
+
+\begin{defi}[Spectre de fourier]
+    $S_n(t) = C_n\cos(n\omega t + \phi_n)$, le spectre en amplitude représente $|C_n|$ et celui en phase représente $\phi_n$.
+\end{defi}
+
+\begin{prop}[Translation verticale] Les coefficients de fourier ne sont pas modifiées par une translation verticale, seul $a_0$ change.
+\end{prop}
+
+\begin{rem} Le contenu spectral est d'autant plus riche en harmoniques d'ordre élevé qu'on a des variations rapides.
+\end{rem}
+
+\begin{lemme}[Spectre d'un signal en impulsions périodisées]\[
+    f(t) = E\frac{\tau}{T} + \sum_{k=1}^{\infty} 2E\frac{\tau}{T}\sinc\left(n\pi\frac{\tau}{T}\right)\cos\left(n\frac{2\pi}{T}t\right)
+\]\end{lemme}
+
+\begin{defi}[Sinus cardinal]\[
+    \sinc(x) = \frac{\sin x}{x}
+\]\end{defi}
+
+\begin{prop}[Translation horizontale]\[
+    f(t-\tau) = a_0 + \sum_{n=1}^\infty C_n\cos(n\omega(t-\tau) + \phi_n) = a_0 + \sum_{n=1}^\infty C_n\cos(n\omega t + \phi_n') \text{ avec } \phi_n' = \phi_n - n\omega\tau
+\]\end{prop}
+
+\begin{theo}[Identité de Parseval]\[
+    \left<f^2(t)\right> = a_0^2 + \frac{1}{2}\sum_{n=0}^\infty C_n^2
+\]\end{theo}
+
+\begin{defi}[Valeur efficace]\[
+    F = \sqrt{\left<f^2(t)\right>}
+\]\end{defi}
+
+
