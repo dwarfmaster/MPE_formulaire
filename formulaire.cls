@@ -55,4 +55,5 @@
 \newtheorem{theo}{Théorème}
 \newtheorem{lemme}{Lemme}
 \newtheorem{defi}{Définition}
+\newtheorem{prop}{Proposition}
 
