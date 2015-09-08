@@ -1,4 +1,5 @@
 
+\subsection{Groupes, sous-groupes}
 \begin{defi}
     Soient $(x,y)\in G^2$. $x*y*x^{-1}$ est le symétrique de $y$ sous l'action de $x$.
 \end{defi}
@@ -23,3 +24,54 @@
 \begin{lemme} $\text{rang}(S_2) = 1 \text{ et } \forall n \in \llbracket 3, +\infty\llbracket, \text{rang}(S_n) = 2$
 \end{lemme}
 
+\begin{defi} Soit $G$ un groupe et $H < G$. $\forall (a,y) \in G^2, xR_Hy \equival x^{-1}.y \in H$. L'ensemble des classes d'équivalences est noté $G/H$.
+\end{defi} 
+
+\begin{prop} $xR_Hy \equival y \in xH$
+\end{prop}
+
+\begin{theo}[Théorème de Lagrange] $(G,.)$ groupe fini. On a :\[ |G| = |G/H| * |H| \]
+\end{theo}
+
+\begin{rem} \[\left\{\begin{array}{l} |G| = 2n \\ |H| = n \\ H < G \end{array}\right. \Rightarrow \forall g \in G, g^2 \in H \]
+\end{rem}
+
+\subsection{Morphismes de groupe}
+\begin{prop}[Automorphismes de groupe] \begin{itemize}
+    \item $G \text{ abélien} \Rightarrow (x \mapsto x^{-1}) \in Aut(G)$
+    \item $\forall x \in G, \phi_x : y \mapsto x*y*x^{-1} \in Aut(G)$
+    \item $Int(G) = {\phi_x | x \in G}$ l'ensemble des automorphismes intérieurs.
+\end{itemize}\end{prop}
+
+\begin{prop}[Morphismes de groupe] Soit $f : G \rightarrow G'$ un morphisme de groupe :
+\begin{itemize}
+    \item $H < G \Rightarrow f(H) < G'$
+    \item $H < G' \Rightarrow f^{-1}(H) < G$
+    \item $(Aut(G), \circ)$ est un groupe.
+\end{itemize}
+\end{prop}
+
+\begin{defi} Soit $(G, *)$ un groupe et $R$ une relation d'équivalence sur $G$. $R$ est dite \emph{compatible} avec $*$ si :
+    \[ \forall (x, y, z) \in G^3, xRy \Rightarrow \left\{\begin{array}{l} x*zRy*z \\ z*xRz*y\end{array}\right. \]
+\end{defi}
+
+\begin{prop} Soit $(G, *)$ un groupe et $H < G$. On a : \[ R_H \text{ compatible avec } * \equival \forall x \in G, (xH = Hx \equival xHx^{-1} = H \equival xHx^{-1} \subset H) \]
+    On note alors $H \lhd G$. On dit que $H$ est \emph{distingué}/\emph{invariant} dans $G$.
+\end{prop}
+
+\begin{prop} Soit $H \lhd G$, alors $G/H$ possède un unique structure de groupe telle que \\$\Pi :\begin{array}{ccc} (G, *) & \rightarrow & (G/H, \Diamond) \\ x & \mapsto & \bar{x}\end{array}$ soit un morphisme de groupe.
+\end{prop}
+
+\begin{rem} \begin{itemize}
+    \item Si $*$ commutative, alors $\Diamond$ commutative.
+    \item Si $H \lhd G$, alors $(G/H, \Diamond)$ est appelé groupe quotient.
+    \item Si $G$ abélien, alors $H \lhd G$.
+\end{itemize}\end{rem}
+
+\begin{prop} Soit $f:G\rightarrow G'$ morphisme de groupe. On a $Kerf \lhd G$.
+\end{prop}
+
+\begin{theo}[Premier théorème d'isomorphisme] $\bar{f} : \begin{array}{ccc} G/Kerf & \rightarrow & Imf \\ \bar{x} & \mapsto & f(x)\end{array}$ est bien définie et est un isomorphisme. On a alors, si $G$ est fini, $|G| = |Kerf| * |Imf|$.
+\end{theo}
+
+\subsection{Ordre d'un élément}
