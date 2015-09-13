@@ -19,6 +19,7 @@
 \RequirePackage           {amsfonts}
 \RequirePackage           {amssymb}
 \RequirePackage           {amsthm}
+\RequirePackage           {mathrsfs}
 \RequirePackage           {stmaryrd}
 \RequirePackage[european] {circuitikz}
 \RequirePackage           {fancybox}

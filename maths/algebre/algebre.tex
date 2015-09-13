@@ -75,3 +75,110 @@
 \end{theo}
 
 \subsection{Ordre d'un élément}
+\begin{defi}[Ordre d'un élément] \[\omega(x) = \left\{\begin{array}{l} \min \{k\in\mathbb{N}^* | x^k = e\} \text{ si } \{k\in\mathbb{N}^* | x^k = e\}\neq\emptyset \\ +\infty\text{ sinon}\end{array}\right.\]
+\end{defi}
+
+\begin{prop} \[ \forall (x, y) \in G^2, \left\{\begin{array}{l}
+            \omega(x) = \omega(x^{-1}) \\
+            f\text{ injective }\Rightarrow \omega(f(x)) = \omega(x) \\
+            \omega(xy) = \omega(yx)
+    \end{array}\right.\]
+\end{prop}
+
+\begin{prop} $gr\{x\} = \omega(x)$ \end{prop}
+
+\begin{prop} Si $G$ est un groupe fini, avec $|G| = n$, on a $\forall x \in G, \omega(x) | n$ \end{prop}
+
+\begin{prop} Soit $G = gr\{x\}$. On a \begin{itemize}
+    \item $\omega(x) = +\infty \Rightarrow (G,*)\simeq(\mathbb{Z},+)$
+    \item $\omega(x) = n \Rightarrow (G,*)\simeq(\mathbb{Z}/n\mathbb{Z},+)$
+\end{itemize}\end{prop}
+
+\begin{prop}[Caractérisation de l'ordre d'un élément] Soit $G$ un groupe, $x\in G$ et $d\in\mathbb{N}^*$ :\begin{itemize}
+    \item $\omega(x) = d \equival \forall k \in \mathbb{Z}, (x^k=e\equival d|k)$
+    \item $\omega(x) < +\infty \Rightarrow \forall k \in \mathbb{Z}, \omega{x^k} = \frac{\omega(x)}{\omega(x)\wedge k}$
+    \item $\omega(x) = +\infty \Rightarrow \forall k \in \mathbb{Z}, \omega(x^k) = +\infty$
+\end{itemize}\end{prop}
+
+\begin{prop} Soit $G=gr\{x\}$ fini de cardinal $n\in\mathbb{N}^*$. Soit $d\in\mathbb{N}$ tel que $d|n$. Il existe un unique sour groupe de $G$ de cardinal d, à savoir $gr\{x^{n/d}\}$.
+\end{prop}
+
+\subsection{Anneaux}
+\begin{lemme} Soient $A$ un anneau. Soient $a$ et $b$ deux éléments de $A$ qui commutent. On a :\[\forall n \in \mathbb{N},\left\{\begin{array}{l}
+            (a+b)^n = \sum_{k=0}^n {n\choose k} a^kb^{n-k} \\
+            a^{n+1}-b^{n+1} = (a-b)\sum_{k=0}^n a^kb^{n-k} \\
+\end{array}\right.\]\end{lemme}
+
+\begin{defi} Soit $A$ un anneau. \begin{itemize}
+    \item $x\in A$ est dit \emph{idempotent} si $x^2=x$.
+    \item $x\in A$ est dit \emph{nilpotent} si $\exists k\in\mathbb{N}^*:x^k=0$.
+    \item $A$ est dit intègre si $\forall (a,b)\in A^2, ab=0 \Rightarrow a = 0 ou b = 0$
+\end{itemize}\end{defi}
+
+\begin{prop} Soit $A$ un anneau.\begin{itemize}
+    \item $A[X]$ intègre $\equival$ $A$ intègre.
+    \item $A[[X]]$ intègre $\equival$ $A$ intègre.
+\end{itemize}\end{prop}
+
+\begin{prop} Soit $A$ un anneau.\begin{itemize}
+    \item $A[X]^\times = A^\times$
+    \item $A[[X]]^\times = \{S\in A[[X]] | \tilde{S}(0)\in A^\times\}$
+\end{itemize}\end{prop}
+
+\begin{prop} $\mathscr{Z}(\mathscr{M}_n(\mathbb{K})) = \{\lambda I_n | \lambda\in\mathbb{K}\}$
+\end{prop}
+
+\begin{lemme} Soit $f$ un morphisme d'anneaux. On a $f(A^\times)\in A'^\times$.
+\end{lemme}
+
+\subsection{Idéaux d'un anneau commutatif}
+\begin{defi}[Idéal d'un anneau] Soit $(A,+,*)$ un anneau et $I\in\mathscr{P}(A)$. $I$ est un idéal si : \begin{itemize}
+    \item $I<(A,+)$
+    \item $\forall(a,x)\in A\times I, a*x\in I$
+\end{itemize}\end{defi}
+
+\begin{prop}\begin{itemize}
+    \item Les seuls idéaux d'un corps sont les idéaux triviaux.
+    \item Les idéaux de l'anneau $(\mathbb{Z}, +, *)$ sont les idéaux principaux $n\mathbb{Z}$.
+    \item Les idéaux de $(\mathbb{K}[X], +, *)$ sont les idéaux principaux $P\mathbb{K}[X]$.
+    \item Les idéaux de $(\mathbb{K}[[X]], +, *)$ sont les idéaux principaux $X^n\mathbb{K}[[X]]$.
+\end{itemize}\end{prop}
+
+\begin{prop}\begin{itemize}
+    \item Soit $(I_k)_{k\in K}$ une famille d'idéaux. Alors $\cup_{k\in K} I_k$ est un idéal.
+    \item Si $X$ est une partie de $A$, alors $id(X)$ est le plus petit idéal de $A$ contenant $X$.
+    \item Si $I_1, \ldots I_n$ sont des idéaux de $A$, alors $id(I_1 \cap \ldots I_n) = I_1 + \ldots I_k$.
+    \item $\forall (a_1, \ldots a_n)\in A^n, id\{a_1, \ldots a_n\} = a_1A + \ldots a_nA$
+    \item Si $f$ est un morphisme d'anneaux, $\ker f$ est un idéal.
+\end{itemize}\end{prop}
+
+\begin{rem} Tout morphisme de corps est injectif.
+\end{rem}
+
+\begin{prop} On nomme $d$ le pgcd de $a_1$, \ldots $a_n$:
+    \[\forall (a_1, \ldots a_n)\in\mathbb{Z}^n, \exists ! d\in\mathbb{Z}: \sum_{i=1}^na_i\mathbb{Z} = d\mathbb{Z}\]
+\end{prop}
+
+\begin{prop}[Anneau quotient] Soit $A$ un anneau et $I$ un idéal de $A$. Il existe une unique structure d'anneau commutatif unitaire sur $A/I$ telle que $\Pi : \begin{array}{ccc} A & \rightarrow & A/I \\ x & \mapsto & \bar{x} \end{array}$ soit un morphisme d'anneau. $A/I$ est alors appelé anneau quotient de $A$ par l'idéal $I$.
+\end{prop}
+
+\begin{theo}[Premier théorème d'isomorphisme] Si $f:A\rightarrow A'$ est un morphisme d'anneau, alors $\bar{f}:\begin{array}{ccc} A/\ker f & \rightarrow & Im\ f \\ \bar{x} & \mapsto & f(x)\end{array}$ est bein définie et est un isomorphisme d'anneau.
+\end{theo}
+
+\begin{defi}[Caractéristique] Posons $f:\begin{array}{ccc} \mathbb{Z} & \rightarrow & A \\ k & \mapsto & k.1_A \end{array}$. On a $\ker f = n\mathbb{Z}$. On nomme $car\ A = n$ la caractéristique de $A$ :\begin{itemize}
+    \item Si $n \geq 1$, alors $\omega_{(A,+)}1_A = car\ A$.
+    \item So $n = 0$, alors $\omega_{(A,+)}1_A = +\infty$.
+\end{itemize}\end{defi}
+
+\begin{prop}$\forall n \geq 2, \forall m \in \mathbb{Z}, m\wedge n = 1 \equival \mathbb{Z}/n\mathbb{Z} = gr\{\bar{m}\} \equival \bar{m}\in(\mathbb{Z}/n\mathbb{Z})^\times$
+\end{prop}
+
+\begin{prop}$\forall n\in\mathbb{N}^*, n\in\mathscr{P} \equival (\mathbb{Z}/n\mathbb{Z}, \bar{+}, \bar{*})\text{ est intègre} \equival(\mathbb{Z}/n\mathbb{Z}, \bar{+}, \bar{*}) \text{ est un corps}$
+\end{prop}
+
+\begin{prop}Pour $p\in\mathscr{P}$, il n'y a qu'un seul corps de cardinal $p$.
+\end{prop}
+
+\begin{prop}Si $\mathbb{K}$ est un corps fini, alors $car\ \mathbb{K}\in\mathscr{P}$
+\end{prop}
+
