@@ -182,3 +182,112 @@
 \begin{prop}Si $\mathbb{K}$ est un corps fini, alors $car\ \mathbb{K}\in\mathscr{P}$
 \end{prop}
 
+\begin{prop} $\mathbb{Z}/mn\mathbb{Z} \simeq \mathbb{Z}/m\mathbb{Z}\times\mathbb{Z}/n\mathbb{Z} \equival m\wedge n = 1$
+\end{prop}
+
+\begin{theo}[Théorème des restes chinois] Soit $r\geq2$. Soient $n_1, \dots n_r$ $r$ entiers naturels premiers entre eux. Soit $(a_1, \dots a_r)\in\mathbb{Z}^n$. Il existe un unique entier $x\in\seg{0}{n_1\dots n_r-1}$ tel que : \[ \forall i \in\seg{1}{r}, x\equiv a_i[n_i]\]
+\end{theo}
+
+\begin{defi}[Fonction indicatrice d'Euler] Pour $n\in\mathbb{N}^*$, on pose : \[\phi(n) = \left|\{k\in\seg{1}{n} | k\wedge n = 1\}\right| \]
+    On a alors :\begin{itemize}
+        \item $\phi(n)$ est le nombre de générateurs de $\left(\mathbb{Z}/n\mathbb{Z}, +\right)$
+        \item $\phi(n) = \left|\left(\mathbb{Z}/n\mathbb{Z}, +)\right)^\times\right|$
+        \item Si $d|n$, alors $\phi(d)$ est le nombre d'éléments d'ordre $d$ d'un groupe cyclique de cardinal $n$
+\end{itemize}\end{defi}
+
+\begin{prop}\begin{itemize}
+    \item $\forall n\geq z, 1\leq \phi(n) \leq n-1$
+    \item $\forall n\in\mathbb{N}^*, \phi(n) = n-1 \equival n \text{ premier}$
+    \item Si $p$ est un nombre premier et $\alpha\in\mathbb{N}^*$, on a $\phi(p^\alpha) = p^\alpha - p^{\alpha-1} = p^{\alpha-1}(p-1)$
+    \item $\forall (m,n)\in\mathbb{N}^{*2}, m\wedge n = 1 \Rightarrow \phi(mn) = \phi(m)\phi(n)$
+\end{itemize}\end{prop}
+
+\begin{lemme}[Calcul de $\phi(n)$] $\phi(1)=1$ et pour $n\geq 2$, si $n=p_1^{\alpha_1}\dots p_r^{\alpha_r}$, avec $p_1 < \dots < p_r$ premiers et $(\alpha_1,\dots,\alpha_r)\in\mathbb{N}^{*r}$, on a :
+    \[ \phi(n) = n * \prod_{i=1}^r \left(1-\frac{1}{p_i}\right) \]
+\end{lemme}
+
+\begin{theo}[Théorème d'Euler] Soit $n\in\mathbb{N}^*$, pour $a\in\mathbb{Z}$ tel que $a\wedge n=1$, on a $a^{\phi(n)}\equiv 1[n]$.
+\end{theo}
+
+\begin{theo}[Petit théorème de Fermat] Soit $p\in\mathscr{P}$. On a:\begin{itemize}
+    \item Si $a\in\mathbb{Z}$ tel que $p\nmid a$, alors $a^{p-1}\equiv 1[p]$
+    \item $\forall a\in\mathbb{Z}, a^p\equiv a[p]$
+\end{itemize}\end{theo}
+
+\begin{prop}\begin{itemize}
+    \item $\forall n\geq3, \phi(n)\equiv 0[2]$
+    \item Si $d|n$, alors $\phi(d)|\phi(n)$
+    \item Formule d'Euler-M\"{o}bius : $\forall n\in\mathbb{N}^*, n=\sum_{d|n} \phi(d)$
+\end{itemize}\end{prop}
+
+\begin{prop} Si $A$ est un anneau commutatif intègre, alors tout polynôme de $A[X]$ de degré $n\in\mathbb{N}$ a au plus $n$ racines dans $A$.
+\end{prop}
+
+\subsection{Factorisation dans un anneau principal}
+À partir de maintenant, $(A, +, \times)$ désigne un anneau commutatif unitaire intègre.
+
+\begin{defi} Soient $(a,b)\in A^2$.\begin{itemize}
+    \item On dit que $a$ divise $b$ si $\exists c\in A:b = ac$, et on note $a|b$. On a $a|b \equival bA\subset aA$
+    \item On dit que $a$ et $b$ sont associés si $\exists u\in A^\times : b=ua$. C'est un relation d'équivalence. On a $a|b\text{ et }b|a\equival a\text{ et }b\text{ associés}$
+    \item Un élément $a$ de $A$ est dit irréductible si :\begin{itemize}
+            \item $a$ est non inversible et non nul.
+            \item $\forall (b,c)\in A^2, a=bc \Rightarrow b\in A^\times \text{ ou } c\in A^\times$
+        \end{itemize} ou encore :\begin{itemize}
+            \item $a$ est non inversible et non nul.
+            \item les seuls diviseurs de $a$ sont les inversibles et les associés de $a$.
+        \end{itemize}
+\end{itemize}\end{defi}
+
+\begin{prop}[Propriétés sur les polynômes irréductibles]\begin{itemize}
+    \item Tout polynôme de $\mathbb{K}[X]$ de degré 1 est irréductible.
+    \item Les polynômes irréductibles dans $\mathbb{C}[X]$ sont les polynômes de degré 1.
+    \item Les polynômes irréductibles dans $\mathbb{R}[X]$ sont les polynômes de degré 1 ou les polynômes de degré 2 de déterminant négatif.
+    \item Un polynôme $P$ de degré 2 ou 3 de $\mathbb{K}[X]$ est irréductible si et seulement si $P$ n'a pas de racines dans $\mathbb{K}$.
+    \item Dans $\mathbb{Q}[X]$ et dans $\mathbb{F}_p[X]$, il existe des polynômes irréductibles de tout degré.
+\end{itemize}\end{prop}
+
+\begin{defi} Un anneau commutatif unitaire intègre est dit \emph{principal} si tout idéal est principal.
+\end{defi}
+
+\begin{prop} Dans un anneau principal, toute suite croissante d'idéaux est stationnaire (on dit que l'anneau est \emph{neuthérien}).
+\end{prop}
+
+\begin{theo} Soit $(A,+,\times)$ un anneau principal.\begin{itemize}
+    \item Si $a\in A$ est non inversible, alors $a$ est un produit d'éléments irréductibles.
+    \item Si $r_1\times\dots r_n=s_1\times\dots s_m$, avec $(n,m)\in\mathbb{N}^{*2}$ et $r_1,\dots r_n,s_1\dots s_m$ des irréductibles, alors $n=m$ est $\exists\sigma\in S_n:\forall i\in\seg{1}{n}, \exists u_i\in A^\times: r_{\sigma(i)} = u_i s_i$.
+    \item En particulier, on obtient la décomposition en produit de facteurs premiers pour $P\in\mathbb{K}[X]$.
+\end{itemize}\end{theo}
+
+\begin{prop} Soit $(A,+,\times)$ un anneau unitaire.\begin{itemize}
+    \item Soit $n\in\mathbb{N}^*$. Soit $(a_1,\dots a_n)\in A^n$. Il existe d'uniques éléments $d,m$ de $A$ (à multiplication par un inversible près) tels que :
+        \[ \left\{\begin{array}{l} a_1A+\dots +a_nA = dA \\ a_1A\cap\dots\cap a_nA = mA\end{array}\right. \]
+        On pose alors $d = a_1\wedge\dots\wedge a_n$ et $m=a_1\vee\dots\vee a_n$.
+    \item On a :\begin{itemize}
+            \item $\forall i\in\seg{1}{n}, d|a_i$ et $\forall \delta\in A, (\forall i\in\seg{1}{n}, \delta|a_i)\Rightarrow \delta|d$
+            \item $\forall i\in\seg{1}{n}, a_i|m$ et $\forall \delta\in A, (\forall i\in\seg{1}{n}, a_i|\delta)\Rightarrow m|\delta$
+        \end{itemize}
+    \item $a_1\wedge\dots\wedge a_n = 1_A \equival \exists (u_1, \dots u_n)\in A^n: a_1u_1+\dots+ a_nu_n = 1_A$
+\end{itemize}\end{prop}
+
+\begin{prop} Soit $(A,+,\times)$ un anneau principal.\begin{itemize}
+    \item Soit $(a_1,\dots a_n)\in A^n$, soit $d=a_1\wedge\dots\wedge a_n$. Alors il existe $(a_1',\dots a_n')\in A^n$ tels que $a_1'\wedge\dots\wedge a_n'=1$ et $\forall i\in\seg{1}{n}, \exists \alpha\in A^\times: a_i = \alpha d a_i'$
+    \item Si $a\wedge b=1$ et $a\wedge c=1$, alors $a\wedge bc = 1$.
+    \item Si $a|bc$ et $a\wedge b = 1$, alors $a|c$ : théorème de Gauss.
+    \item Si $r_1$ et $r_2$ sont deux irréductibles non associés, alors $r_1\wedge r_2=1$.
+    \item Si $r$ est irréductible et $a\in A$, alors $r\wedge a = 1$ ou $r|a$
+    \item Si $r$ est irréductible et $r|a_1\dots a_n$, alors $\exists i\in\seg{1}{n}:r|a_i$
+\end{itemize}\end{prop}
+
+\begin{defi}[Contenu d'un polynôme] Soit $P=\sum_{n\in\mathbb{N}} a_n X^n \in\mathbb{Z}[X]$. On appelle \emph{contenu} de $P$ l'entier $c(P) = \wedge_{n\in\mathbb{N}} a_n$
+
+    On dit que $P$ est \emph{primitif} si $c(P) = 1$
+\end{defi}
+
+\begin{prop} Soient $(P,Q)\in\mathbb{Z}[X]^2$. On a $c(PQ)=c(P)c(Q)$. Donc si $PQ$ est primitif, alors $P$ et $Q$ le sont aussi.
+\end{prop}
+
+\begin{prop} Les polynômes irréductible des $\mathbb{Z}[X]$ sont :\begin{itemize}
+    \item les constantes premières.
+    \item les polynômes primitifs qui sont irréductibles dans $\mathbb{Q}[X]$
+\end{itemize}\end{prop}
+
