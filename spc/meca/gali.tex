@@ -1,0 +1,44 @@
+
+\newcommand{\refe}{\mathscr{R}}
+\newcommand{\der}[1]{\frac{d#1}{dt}}
+
+\begin{prop} Si $S$ est un solide, on a $\forall (P,Q)\in S, \forall t_0, \forall t, ||\vec{PQ}||_t = ||\vec{PQ}||_{t_0}$.
+\end{prop}
+
+\begin{defi}[Translation d'un solide] Soit $S$ un solide et $\mathscr{R}$ un référentiel. $S$ est en translation dans $\mathscr{R}$ si $\forall (P,Q)\in S, \frac{d\vec{PQ}}{dt}_{\mathscr{R}} = \vec{0}$
+    On a alors $\forall t, \vec{v}(P)_\refe = \vec{v}(Q)_\refe \text{ et } \vec{a}(P)_\refe = \vec{a}(Q)_\refe$.
+\end{defi}
+
+\begin{defi}[Rotation d'un solide] Un solide est dit en rotation autourt d'un axe fixe $\Delta$ si tous ses points décrivent des cercles d'axes coaxiaux $\Delta$.
+    Soit $\vec{k}$ un vecteur engendrant $\Delta$. Soit $P$ un point quelconque de $S$ et $K$ sont projeté sur $\Delta$. Soit $t_0$. Posons $\theta = (\vec{KP}_{t_0}, \vec{KP}_t)$. On pose de même $\vec{\omega} = \dot{\theta}\vec{k}$. On a alors $\forall P\in S, \vec{v}(P)_\refe = \vec{\omega}\wedge\vec{OP}$, avec $O$ un point fixe quelconque de $\Delta$.
+\end{defi}
+
+\begin{defi}[Vecteur rotation] Pour un solide $S$ en rotation dans $\refe$, on pose $\vec{\Omega}_{(S/\refe)} = \vec{\omega}$
+\end{defi}
+
+\begin{lemme}[Dérivation vectorielle en translation] Si $\refe'$ est en translation dans $\refe$, on a :
+    \[ \der{\vec{K}}_\refe = \der{\vec{K}}_{\refe'} \]
+\end{lemme}
+
+\begin{lemme}[Dérivation vectorielle en rotation] Si $\refe'$ est en rotation dans $\refe$ de vecteur rotation $\vec{\Omega}$, on a :
+    \[ \der{\vec{K}}_\refe = \der{\vec{K}}_{\refe'} + \vec{\Omega}\wedge\vec{K} \]
+\end{lemme}
+
+\begin{lemme}[Changement de référentiel en translation] Si $\refe'$ est en translation dans $\refe$, on a:
+    \[\vec{v}(M)_\refe = \vec{v}(M)_{\refe'} + \vec{v}(O')_\refe \]
+    et :
+    \[ \vec{a}(M)_\refe = \vec{a}(M)_{\refe'} + \vec{a}(O')_\refe \]
+    On nomme $\vec{v}_e = \vec{v}(O')_\refe$ \emph{vitesse d'entrainement} de $\refe'$ dans $\refe$.
+\end{lemme}
+
+\begin{lemme}[Changment de référentiel en rotation] Si $\refe'$ est en rotation dans $\refe$, de vecteur rotation $\vec{\Omega}$, on a:
+    \[ \vec{v}(M)_\refe = \vec{v}(M)_{\refe'} + \vec{\Omega}\wedge\vec{O'M} \]
+    et :
+    \[ \vec{a}(M)_\refe = \vec{a}(M)_{\refe'} + \vec{\Omega}\wedge(\vec{\Omega}\wedge\vec{O'M}) + 2\vec{\Omega}\wedge\vec{v}(M)_{\refe'} \]
+    On nomme $\vec{v}_e = \vec{\Omega}\wedge\vec{O'M}$ \emph{vitesse d'entrainement}, $\vec{a}_e = \vec{\Omega}\wedge(\vec{\Omega}\wedge\vec{O'M})$ \emph{accélération d'entrainement} et $\vec{a}_c = 2\vec{\Omega}\wedge\vec{v}(M)_{\refe'}$ eccélération de \emph{Coriolis}.
+\end{lemme}
+
+\begin{theo}[Relativité galiléenne] Les loi de la physique sont invariante par changement de référentiel galiléen.
+\end{theo}
+
+
