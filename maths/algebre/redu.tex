@@ -1,0 +1,177 @@
+\newcommand{\sem}{\overset{s}{\sim}}
+
+\subsection{Compléments d'algèbre linéaire}
+\subsubsection{Espace quotient}
+\begin{defi}[Espace quotient]
+    Soit $F$ un sous-espace vectoriel du $\mathbb{K}$ ev $(E, +, .)$, alors c'est un sous groupe distingué de $(E, +)$, d'où $(E/F, \bar{+})$ a une structure de groupe. De plus, en posant $\bar{.} : (\alpha, \bar{u}) \mapsto \bar{\alpha.u}$, on a $(E/F, \bar{+}, \bar{.})$ un espace vectoriel.
+\end{defi}
+
+\begin{theo}[Premier théorème d'isomorphisme] Soit $f \in \mathscr{L}_\mathbb{K}(E,E')$, on a :
+    \[ \bar{f} : \begin{array}{ccc} \left(E/\ker f, \bar{+}, \bar{.}\right) & \rightarrow & \left(im f, +', .'\right) \\ \bar{u} & \mapsto & f(u) \end{array} \]
+    est bien définie et est un isomorphisme.
+\end{theo}
+
+\begin{prop} Soit $E$ un espace vectoriel de dimension finie et $F$ et $G$ deux sous-espace vectoriel de $E$ tels que $E = F \oplus G$. Notons $p$ la projection vectorielle sur $F$ parallèlement à $G$. On a $\bar{p} : E/F \tilde{\rightarrow} G$. Donc $\dim E/F = \dim E - \dim F$.
+\end{prop}
+
+\begin{prop}[Formule du rang] Si $f\in\mathscr{L}_\mathbb{K}(E,E')$, on a $\bar{r} : E/\ker f \tilde{\rightarrow} im f$, donc $\dim im f = \dim E/\ker f = \dim E - \dim \ker f$.
+\end{prop}
+
+\subsubsection{Algèbres}
+\begin{defi}[$\mathbb{K}$-algèbre] On dit que $(A, +, *, .)$ est une $\mathbb{K}\text{-algèbre}$ (resp commutative) si :\begin{itemize}
+    \item $(A, +, *)$ est un anneau (commutatif).
+    \item $(A, +, .)$ est un $\mathbb{K}$ ev.
+    \item $\forall (\lambda, \mu) \in \mathbb{K}^2, \forall (x, y)\in A^2, (\lambda.x) * (\mu.y) = (\lambda\mu).(x*y)$
+\end{itemize}\end{defi}
+
+\begin{defi}[Sous-algèbre] Une partie $B$ d'une algèbre $(A, +, *, .)$ est une sous-algèbre si :\begin{itemize}
+    \item $B\subset A$ et $1_A\in B$
+    \item $\forall (\lambda, \mu)\in\mathbb{K}^2,\forall(x,y)\in B^2, \lambda.x+\mu.y\in B$
+    \item $\forall (x,y)\in B^2, x*y\in B$
+\end{itemize}\end{defi}
+
+\begin{defi}[Morphisme d'algèbre] Soient $A$ et $A'$ deux algèbres. Un application $f:A\rightarrow A'$ est un morphisme d'algèbre si :\begin{itemize}
+    \item $f(1_A) = 1_{A'}$
+    \item $\forall(\lambda, \mu)\in\mathbb{K}^2,\forall(x,y)\in B^2, f(\lambda.x+\mu.y) = \lambda.f(x) + \mu.f(y)$
+    \item $\forall(x,y)\in B^2, f(x*y) = f(x)*f(y)$
+\end{itemize}\end{defi}
+
+\begin{prop} Si $f:A\rightarrow A'$ est un morphisme d'algèbre, on a:\begin{itemize}
+    \item l'image d'une sous algèbre par $f$ est une sous algèbre.
+    \item l'image réciproque d'une sous algèbre est une sous algèbre.
+\end{itemize}\end{prop}
+
+\begin{defi}[Polynôme minimaux] On a :\begin{itemize}
+\item Soit $A\in\mathscr{M}_n(\mathbb{K})$, posons $\phi_A :\begin{array}{ccc} \mathbb{K}[X] & \rightarrow & \mathscr{M}_n(\mathbb{K}) \\ P & \mapsto & P(A)\end{array}$. $\phi_A$ est un morphisme d'algèbre. Étant en dimensions finie, $\ker\phi_A$ n'est pas un idéal trivial. On a $\exists!\pi_A:\ker\phi_A=\pi_A\mathbb{K}[X]$ avec $\pi_A$ unitaire. $\pi_A$ est appelé \emph{polynôme minimal de $A$}.
+\item Soit $u\in\mathscr{L}(E)$.Posons $\phi_u :\begin{array}{ccc} \mathbb{K}[X] & \rightarrow & \mathscr{L}(E) \\ P & \mapsto & P(u)\end{array}$. $\phi_u$ est un morphisme d'algèbre, et on nomme $\ker\phi_u$ \emph{l'idéal des polynômes annulateurs de $u$}.En dimension finie, on a l'existence d'un polynôme minimal.
+\end{itemize}\end{defi}
+
+\begin{prop}[Polynôme minimal d'une matrice d'ordre 2] Soit $A\in\mathscr{M}_2(\mathbb{K})$. \begin{itemize}
+    \item Si $A\in Vect \{I_n\}$, alors $\pi_A = X - A_{1,1}$
+    \item Sinon, $\pi_A = X^2 - Tr A.X + \det A$
+\end{itemize}\end{prop}
+
+\begin{defi}[Polynômes homogènes] Un polynôme est dit homogène si chacun de ses monôme est de même degré. On note $H_d$ l'ensemble des polynômes homogènes de degré $d$.
+\end{defi}
+
+\begin{prop} Soit $P\in\mathbb{K}[X_1, \ldots, X_n]$. Soit $d=\deg P$. On a :
+ \[ \left(P\in H_d \equival \forall \lambda \in \mathbb{K}, P(\lambda.X_1, \ldots \lambda.X_n) = \lambda^nP(X_1,\ldots X_n\right)\equival \mathbb{K} \text{ infini} \]
+\end{prop}
+
+\subsubsection{Espace dual}
+\begin{defi}[Espace dual] Si $E$ est un $\mathbb{K}$ ev, alors le $\mathbb{K}$ ev $\mathscr{L}_\mathbb{K}(E,\mathbb{K})$ est noté $E^*$ et est appelé espace dual.
+\end{defi}
+
+\begin{prop}Si $E$ est un $\mathbb{K}$ ev de dimension $n\in\mathbb{N}^*$ de base $(e_1, \ldots e_n)$, alors $E^*$ est de dimension $n$ et il existe une unique base $(e_1^*, \ldots e_n^*)$ de $E^*$ telle que $\forall (i,j)\in\seg{1}{n}^2, e_i^*(e_j) = \delta_{i,j}$
+\end{prop}
+
+\begin{prop} Toute forme linéaire est soit nulle soit surjective. De plus, si $E$ est de dimension finie et $f$ un forme linéaire non nulle, on a $\dim\ker f = \dim E - 1$, c'est donc un hyperplan.
+\end{prop}
+
+\subsubsection{Matrices équivalentes, matrices semblables}
+\begin{defi}[Matrices équivalentes] Soit $(A,B)\in\mathscr{M}_{n,p}(\mathbb{K})^2$. $A$ et $B$ sont dites semblables si $\exists (P,Q)\in GL_p(\mathbb{K})\times GL_n(\mathbb{K}): A=Q^{-1}BP$ \\
+    Cela signifie qu'il existe $u\in\mathscr{L}(\mathbb{K}^p,\mathbb{K}^n)$, deux bases $B$ et $B'$ de $\mathbb{K}^p$ et deux bases $C$ et $C'$ de $\mathbb{K}^n$ telles que $A=mat_{B,C}(u)$ et $B=mat_{B',C'}(u)$ \\
+    On note $A\sim B$.
+\end{defi}
+
+\begin{prop} Soit $A\in\mathscr{M}_{n,p}(\mathbb{K})$, on a $rg A=r \equival A\sim J_r$
+\end{prop}
+
+\begin{defi}[Matrices semblables] Soient $(A,B)\in\mathscr{M}_n(\mathbb{K})^2$. $A$ et $B$ sont dites semblables si $\exists P\in GL_n(\mathbb{K}): A = P^{-1}BP$. \\
+    Cela signifie que $A$ et $B$ sont les matrices d'un même endomorphisme dans deux base différentes. \\
+    On note $A\sem b$.
+\end{defi}
+
+\begin{prop}\begin{itemize}
+    \item $\sem$ est une relation d'équivalence.
+    \item $A\sem\lambda I_n \equival A=\lambda I_n$
+    \item $\left\{\begin{array}{l} A\sem B \\ Q\in\mathbb{K}[X]\end{array}\right. \Rightarrow Q(A)\sem Q(B)$
+    \item $A\sem B \Rightarrow \left\{\begin{array}{l} A\sim B \equival rg A= rg B \\
+                                                       \det A = \det B \\
+                                                       tr A = tr B \\
+                                                       \pi_A = \pi_B
+                                      \end{array}\right.$
+    \item $N\in\mathscr{M}_n(\mathbb{K})$ nilpotente d'indice n $\equival N\sem \left[\begin{array}{ccccc} 0      & 1      & 0      & \ldots & 0      \\
+                                                                                                        0      & 0      & 1      &        & \vdots \\
+                                                                                                        \vdots &        & \ddots & \ddots & 0      \\
+                                                                                                        \vdots &        &        & \ddots & 1      \\
+                                                                                                        0      & \ldots & \ldots & \ldots & 0      \\
+                                                                                    \end{array}\right]$
+\end{itemize}\end{prop}
+
+\begin{prop} Si une matrice est triangulaire supérieure stricte, alors elle est nilpotente.
+\end{prop}
+
+\begin{prop} Soit $K$ un sous corps de $\mathbb{K}$. Soit $A\in\mathscr{M}_n(K)$. On a$\{P\in K[X]\ |\ P(A)=0\}\subset\{P\in\mathbb{K}[X]\ |\ P(A)=0\}$ et $\pi_{A,K} = \pi_{A,\mathbb{K}}$.
+\end{prop}
+
+\subsubsection{Générateurs de $GL_n(\mathbb{K})$ et de $\mathscr{M}_n(\mathbb{K})$}
+\begin{defi}[Opération élémentaire] Soit $A\in\mathscr{M}_n(\mathbb{K})$. On appelle opération élémentaire sur $A$ la multiplication de $A$ par l'une des trois matrices suivantes :\begin{description}
+    \item[Matrice de dilatation] $\forall \lambda\in\mathbb{K}^*, D_i(\lambda) = I_n + (\lambda-1)E_{ii}$. Multiplier à droite revient à multiplier la ieme ligne par $\lambda$ et à gauche la ieme colonne par $\lambda$. On a $\det D_i(\lambda) = \lambda$ et $D_i(\lambda)^{-1}=D_i(\lambda^{-1})$
+    \item[Matrice de transvection] $T_{ij}(\lambda) = I_n + \lambda E_{ij}$. Multiplier à droite revient à ajouter $\lambda$ fois la jeme ligne à la ieme et multiplier à gauche revient à ajouter $\lambda$ fois la jeme colonne à la ieme. On a $\det T_{ij}(\lambda) = 1$ et $T_{ij}(\lambda)^{-1} = T_{ij}(-\lambda)$.
+    \item[Matrice d'échange] $U_{ij} = I_n - E_{ii} - E_{jj} + E_{ij} + E_{ji}$. Multiplier à droite revient à échanger les ieme et jeme lignes et multiplier à gauche revient à échanger les ieme et jeme colonne. On a $U_{ij}^{-1} = U_{ij}$
+\end{description}\end{defi}
+
+\begin{theo} $GL_n(\mathbb{K})$ est engendré par les matrices de transvections et de dilatation. Plus précisément, pour $A\in GL_n(\mathbb{K})$, il existe $T_1, \ldots T_n, T_1', \ldots T_s'$ matrices de transvections telles que $A=T_1\ldots T_nD_n(\det A)T_1'\ldots T_s'$.
+\end{theo}
+
+\begin{defi} $SL_n(\mathbb{K}) = \{M\in GL_n(\mathbb{K})\ |\ \det M = 1\}$. On a $SL_n(\mathbb{K})\lhd (GL_n(\mathbb{K}), *)$ et $SL_n(\mathbb{K})$ est engendré par les transpositions.
+\end{defi}
+
+\subsubsection{Matrices de permutations}
+\begin{defi}[Matrice de permutation] Soit $n\geq 2$. Soit $\sigma\in S_n$. On pose $P(\sigma) = [\delta_{i,\sigma(i)}]_{(i,j)\in\seg{1}{n}^2}\in\mathscr(M)_n(\mathbb{K})$.
+\end{defi}
+
+\begin{prop}\begin{itemize}
+    \item $\forall\sigma\in S_n, \det P(\sigma) = \epsilon(\sigma)$
+    \item $\forall\sigma\in S_n, P(\sigma)^{-1} = P(\sigma^{-1}) = {}^tP(\sigma)$
+    \item $\begin{array}{ccc} (S_n, \circ) & \rightarrow & (GL_n(\mathbb{K}), *) \\ \sigma & \mapsto & P(\sigma) \end{array}$ est un morphisme injectif de groupe.
+\end{itemize}\end{prop}
+
+\begin{prop} Multiplier à droite par $P(\sigma)$ échange les lignes selon $\sigma^{-1}$ et multiplier à gauche échange les colonnes selon $\sigma$
+\end{prop}
+
+\subsubsection{Lemme de décomposition des noyaux}
+\begin{lemme}[Lemme de décomposition des noyaux] Soit $E$ un $\mathbb{K}$ ev et $f\in\mathscr{L}(E)$. Soient $(P_1,\ldots P_n)\in \mathbb{K}[X]^n$ tels que $\forall (i,j)\in\seg{1}{n}^n, P_i\wedge P_j = 1$. On a alors :
+    \[ \ker\left[\left(\prod_{i=1}^n P_i\right)(f)\right] = \oplus_{i=1}^n \ker P_i(f) \]
+\end{lemme}
+
+\begin{prop} Si $\pi_f = P_1^{\alpha_1}\ldots P_r^{\alpha_r}$, on a : $E = \oplus_{i=1}^r \ker P_i^{\alpha_i}(f)$
+\end{prop}
+
+\subsubsection{Endomorphismes cycliques}
+\begin{defi}[Matrice compagnon] Soit $P\in\mathbb{K}[X]$ avec $P=X^n+a_{n-1}X^{n-1}+\ldots+a_0$. On note $C(P)$ la matrice compagnon associée à $P$ :
+    \[ C(P) = \left[\begin{array}{cccc} 0 & \ldots & 0      & -a_0   \\
+                                        1 & \ddots &        & \vdots \\
+                                          & \ddots & 0      & \vdots \\
+                                        0 &        & 1      & -a_{n-1}
+              \end{array}\right] \]
+\end{defi}
+
+\begin{defi}[Endomorphismes cycliques] Soit $E$ un $\mathbb{K}$ ev de dimension $n\in\mathbb{N}^*$. Soit $f\in\mathscr{L}(E)$. On dit que $f$ est cyclique si il vérifie l'une des propriétés équivalentes suivante :\begin{itemize}
+    \item $\exists x\in E: (x, f(x), \ldots f^{n-1}(x))$ base de $E$
+    \item Il existe une base $B$ de $E$ et $P$ un polynôme unitaire de degré $n$ telle que $mat_B(f) = C(P)$
+    \item $\deg \pi_f = n$
+\end{itemize}\end{defi}
+
+\begin{prop} Soient $(P,Q)\in\mathbb{K}[X]^2$ unitaires de degré $n$. $C(P) = c(Q) \equival P=Q$
+\end{prop}
+
+\subsubsection{Sous espaces stables}
+\begin{defi} Soit $E$ un $\mathbb{K}$ ev et $f\in\mathscr{L}(E)$. Soit $F$ un sev de $E$. $F$ est dit stable par $f$ si $f(F)\subset F$.
+\end{defi}
+
+\begin{prop} Si $F$ est stable par $f$, on a $\forall P\in\mathbb{K}[X], \forall x \in F, P(f)(x) = P(f_{|F})(x)$
+\end{prop}
+
+\subsection{Éléments propres d'un endomorphisme}
+\begin{defi} Soit $E$ un $\mathbb{K}$ ev. Soit $f\in\mathscr{L}(E)$.\begin{itemize}
+    \item $\lambda\in\mathbb{K}$ est appelée valeur propre de $f$ si l'une des propositions suivantes est vérifiée :\begin{itemize}
+            \item $f-\lambda id_E$ n'est pas injective
+            \item $\ker (f-\lambda id_E)\neq \emptyset$
+            \item $\exists x\in E\\\{0_E\}: f(x) = \lambda.x$
+        \end{itemize}
+    \item $x\in E$ est appelé vecteur propre de $f$ si $x\neq 0_E$ et $\exists\lambda\in\mathbb{K}: f(x)=\lambda.x$. On dit alors que $\lambda$ est la valeur propre associée au vecteur propre $x$.
+    \item L'ensemble des valeurs propres de $E$ est appelé spectre de $f$ et est noté $S_p(f)$.
+    \item Pour $\lambda\in S_p(f)$, on pose $E_\lambda(f)=\ker(f-\lambda.id_E)$ l'ensemble des vecteurs propres associés à $\lambda$ ainsi que le vecteur nul.
+\end{itemize}\end{defi}
